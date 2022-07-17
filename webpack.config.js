@@ -1,3 +1,7 @@
+/**
+ * @type {import('webpack').Configuration}
+*/
+
 const path = require('path')
 const TerserPlugin = require('terser-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
@@ -6,7 +10,6 @@ module.exports = {
 	mode: 'development',
 	entry: {
 		index: './src/index.js',
-		print: './src/print.js'
 	},
 	devtool: 'inline-source-map',
 	devServer: {
@@ -21,7 +24,6 @@ module.exports = {
 		filename: '[name].bundle.js',
 		path: path.resolve(__dirname, 'dist'),
 		clean: true,
-		publicPath: '/'
 	},
 	resolve: {
 		alias: {
@@ -35,6 +37,5 @@ module.exports = {
 				extractComments: false, // webpack5 打包后会自动生成.txt文件，此配置不将注释提取到单独的文件中
 			})
 		],
-		runtimeChunk: 'single'
 	}
 }
