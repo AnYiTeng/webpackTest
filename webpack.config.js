@@ -7,7 +7,7 @@ module.exports = {
 		filename: 'webpack-numbers.js',
 		library: {
 			name: 'webpackNumbers',
-			type: 'umd'
+			type: 'module'
 		},
 		clean: true
 	},
