@@ -1,14 +1,24 @@
 import _ from 'lodash'
-// import Print from './print.js'
+import printMe from './print.js'
 
 function component() {
 	const el = document.createElement('div')
+	const btn = document.createElement('button')
 
-	// lodash 是由当前 script 脚本 import 进来的
-	el.innerHTML = _.join(['Hello', 'Webpack'], ' ')
-	// el.onclick = Print.bind(null, 'hello webpack')
+	el.innerHTML = _.join(['Hellow', 'Webpack'], ' ')
+	btn.innerHTML = 'Click me and check the console!';
+	btn.onclick = printMe;
+
+	el.appendChild(btn);
 
 	return el
 }
 
 document.body.appendChild(component())
+
+if (module.hot) {
+	module.hot.accept('./print.js', function() {
+		console.log('Accepting the updated printMe module!')
+		printMe()
+	})
+}

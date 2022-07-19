@@ -5,23 +5,32 @@
 const path = require('path')
 const TerserPlugin = require('terser-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const webpack = require('webpack')
 
 module.exports = {
-	mode: 'development',
 	entry: {
-		index: './src/index.js',
+		app: './src/index.js',
+		// Runtime code for hot module replacement
+		hot: 'webpack/hot/dev-server.js',
+		// Dev server client for web socket transport, hot and live reload logic
+		client: 'webpack-dev-server/client/index.js?hot=true&live-reload=true'
 	},
 	devtool: 'inline-source-map',
 	devServer: {
-		static: './dist'
+		static: './dist',
+		// Dev server client for web socket transport, hot and live reload logic
+		hot: false,
+		client: false,
 	},
 	plugins: [
 		new HtmlWebpackPlugin({
-			title: 'Caching'
+			title: 'Hot Module Replacement'
 		}),
+		// Plugin for hot module replacement
+		new webpack.HotModuleReplacementPlugin()
 	],
 	output: {
-		filename: '[name].[contenthash].js',
+		filename: '[name].bundle.js',
 		path: path.resolve(__dirname, 'dist'),
 		clean: true,
 	},
@@ -37,16 +46,5 @@ module.exports = {
 				extractComments: false, // webpack5 打包后会自动生成.txt文件，此配置不将注释提取到单独的文件中
 			})
 		],
-		moduleIds: 'deterministic',
-		runtimeChunk: 'single',
-		splitChunks: {
-			cacheGroups: {
-				vendor: {
-					test: /[\\/]node_modules[\\/]/,
-					name: 'vendors',
-					chunks: 'all'
-				}
-			}
-		}
 	}
 }
