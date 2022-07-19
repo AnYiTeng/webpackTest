@@ -6,3 +6,5 @@
 ## 2.envVar: 环境变量测试
 
 ## 3.requireTest: 依赖管理测试
+
+## 4.hotModuleReplacement: 模块热替换
