@@ -1,12 +1,11 @@
 import _ from 'lodash'
-// import Print from './print.js'
+const lists = require('./template/' + name + '.ejs')
 
 function component() {
 	const el = document.createElement('div')
+	console.log(lists, 'lists???')
 
-	// lodash 是由当前 script 脚本 import 进来的
 	el.innerHTML = _.join(['Hello', 'Webpack'], ' ')
-	// el.onclick = Print.bind(null, 'hello webpack')
 
 	return el
 }
