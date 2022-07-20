@@ -10,3 +10,5 @@
 ## 4.hotModuleReplacement: 模块热替换
 
 ## 5.treeShaking: 移除未引用代码
+
+## 6.productionTest: 生产环境测试
