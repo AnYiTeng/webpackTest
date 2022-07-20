@@ -6,7 +6,7 @@ function component() {
 	const btn = document.createElement('button')
 
 	el.innerHTML = _.join(['Hellow', 'Webpack'], ' ')
-	btn.innerHTML = 'Click me and check the console!';
+	btn.innerHTML = 'Click me and check the console!!';
 	btn.onclick = printMe;
 
 	el.appendChild(btn);
@@ -16,9 +16,10 @@ function component() {
 
 document.body.appendChild(component())
 
+console.log(module.hot, 'module.hot???')
 if (module.hot) {
 	module.hot.accept('./print.js', function() {
-		console.log('Accepting the updated printMe module!')
+		console.log('Accepting the updated printMe module!!')
 		printMe()
 	})
 }

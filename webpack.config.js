@@ -7,20 +7,19 @@ const TerserPlugin = require('terser-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const webpack = require('webpack')
 
+
+/**
+ * 经测试：模块热替换只需要设置 devServer{ hot: true } 或 webpack.HotModuleReplacementPlugin 之一即可
+ */
 module.exports = {
+	mode: 'development',
 	entry: {
 		app: './src/index.js',
-		// Runtime code for hot module replacement
-		hot: 'webpack/hot/dev-server.js',
-		// Dev server client for web socket transport, hot and live reload logic
-		client: 'webpack-dev-server/client/index.js?hot=true&live-reload=true'
 	},
 	devtool: 'inline-source-map',
 	devServer: {
 		static: './dist',
-		// Dev server client for web socket transport, hot and live reload logic
-		hot: false,
-		client: false,
+		// hot: false,
 	},
 	plugins: [
 		new HtmlWebpackPlugin({
