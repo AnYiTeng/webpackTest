@@ -21,6 +21,14 @@ module.exports = {
 		static: './dist',
 		// hot: false,
 	},
+	module: {
+		rules: [
+			{
+				test: /\.css$/,
+				use: ['style-loader', 'css-loader']
+			}
+		]
+	},
 	plugins: [
 		new HtmlWebpackPlugin({
 			title: 'Hot Module Replacement'
