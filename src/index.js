@@ -1,14 +1,13 @@
-import _ from 'lodash'
-// import Print from './print.js'
+import { cube } from './math.js'
 
 function component() {
-	const el = document.createElement('div')
+	const element = document.createElement('pre')
+	element.innerHTML = [
+		'Hello webpack!',
+		'5 cubed is equal to ' + cube(5)
+	].join('\n\n')
 
-	// lodash 是由当前 script 脚本 import 进来的
-	el.innerHTML = _.join(['Hello', 'Webpack'], ' ')
-	// el.onclick = Print.bind(null, 'hello webpack')
-
-	return el
+	return element
 }
 
 document.body.appendChild(component())
