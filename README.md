@@ -8,3 +8,5 @@
 ## 3.requireTest: 依赖管理测试
 
 ## 4.hotModuleReplacement: 模块热替换
+
+## 5.treeShaking: 移除未引用代码
