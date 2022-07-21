@@ -14,3 +14,5 @@
 ## 6.productionTest: 生产环境测试
 
 ## 7.codeSplit: 代码分离
+
+## 8.lazyLoad: 懒加载
