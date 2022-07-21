@@ -1,0 +1,4 @@
+"use strict";(self.webpackChunkmywebpack=self.webpackChunkmywebpack||[]).push([["print"],{"./src/print.js":
+/*!**********************!*\
+  !*** ./src/print.js ***!
+  \**********************/(__unused_webpack_module,__webpack_exports__,__webpack_require__)=>{eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconsole.log(\n  'The print.js module has loaded! See the network tab in dev tools...'\n);\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (() => {\n  console.log('Button Clicked: Here\\'s \"some text\"!');\n});\n\n//# sourceURL=webpack://mywebpack/./src/print.js?")}}]);
