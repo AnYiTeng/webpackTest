@@ -18,3 +18,5 @@
 ## 8.lazyLoad: 懒加载
 
 ## 9.shimmingTest: shimming 预置依赖
+
+## 10.typeScript: ts 配置
