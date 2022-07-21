@@ -5,9 +5,9 @@
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack",
+    "build": "webpack --config webpack.prod.js",
     "watch": "webpack --watch",
-    "start": "webpack serve --open",
+    "start": "webpack serve --open --config webpack.dev.js",
     "server": "node server.js"
   },
   "keywords": [],
@@ -23,6 +23,7 @@
     "webpack": "^5.73.0",
     "webpack-cli": "^4.10.0",
     "webpack-dev-middleware": "^5.3.3",
-    "webpack-dev-server": "^4.9.3"
+    "webpack-dev-server": "^4.9.3",
+    "webpack-merge": "^5.8.0"
   }
 }
