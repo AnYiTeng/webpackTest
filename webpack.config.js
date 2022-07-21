@@ -11,16 +11,13 @@ module.exports = {
 	entry: {
 		index: './src/index.js',
 	},
-	devServer: {
-		static: './dist'
-	},
 	plugins: [
 		new HtmlWebpackPlugin({
-			title: 'Caching'
+			title: 'Split Code'
 		}),
 	],
 	output: {
-		filename: '[name].[contenthash].js',
+		filename: '[name].bundle.js',
 		path: path.resolve(__dirname, 'dist'),
 		clean: true,
 	},
@@ -35,6 +32,6 @@ module.exports = {
 			new TerserPlugin({
 				extractComments: false, // webpack5 打包后会自动生成.txt文件，此配置不将注释提取到单独的文件中
 			})
-		],
+		]
 	}
 }

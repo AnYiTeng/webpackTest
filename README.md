@@ -14,3 +14,6 @@
 ## 6.productionTest: 生产环境测试
 
 ## 7.codeSplit: 代码分离
+> 方式:  
+1.`entry` 中将公共依赖部分提取为 `dependOn: 'shared'`，如果我们要在一个 HTML 页面上使用多个入口时，还需设置 `optimization.runtimeChunk: 'single'`
+2.SplitChunksPlugin，添加`optimization.splitChunks.chunks = 'all'`
