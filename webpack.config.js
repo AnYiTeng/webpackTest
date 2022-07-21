@@ -5,6 +5,7 @@
 const path = require('path')
 const TerserPlugin = require('terser-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const webpack = require('webpack')
 
 module.exports = {
 	mode: 'development',
@@ -18,9 +19,13 @@ module.exports = {
 		new HtmlWebpackPlugin({
 			title: 'Caching'
 		}),
+		new webpack.ProvidePlugin({
+			// _: 'lodash' // 告诉 webpack 如果遇到了至少一处用到 _ 变量的模块实例，那请你将 lodash package 引入进来，并将其提供给需要用到它的模块。
+			join: ['lodash', 'join'] // 可以使用 ProvidePlugin 暴露出某个模块中单个导出，通过配置一个“数组路径”（例如 [module, child, ...children?]）实现此功能，这样就能很好的与 tree shaking 配合，将 lodash library 中的其余没有用到的导出去除
+		})
 	],
 	output: {
-		filename: '[name].[contenthash].js',
+		filename: 'main.js',
 		path: path.resolve(__dirname, 'dist'),
 		clean: true,
 	},
