@@ -24,6 +24,18 @@ module.exports = {
 			join: ['lodash', 'join'] // 可以使用 ProvidePlugin 暴露出某个模块中单个导出，通过配置一个“数组路径”（例如 [module, child, ...children?]）实现此功能，这样就能很好的与 tree shaking 配合，将 lodash library 中的其余没有用到的导出去除
 		})
 	],
+	module: {
+		rules: [
+			{
+				test: require.resolve('./src/index.js'),
+				use: 'imports-loader?wrapper=window'
+			},
+			{
+				test: require.resolve('./src/globals.js'),
+				use: 'exports-loader?type=commonjs&exports=file,multiple|helper.parse|parse'
+			}
+		]
+	},
 	output: {
 		filename: 'main.js',
 		path: path.resolve(__dirname, 'dist'),

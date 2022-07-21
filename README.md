@@ -27,3 +27,14 @@ plugins: [
 		})
 	],
 ```
+>全局 `export`
+```js
+module: {
+		rules: [
+			{
+				test: require.resolve('./src/globals.js'),
+				use: 'exports-loader?type=commonjs&exports=file,multiple|helper.parse|parse' // 这样就可以使用 const { file, parse } = require('./globals.js');，可以保证一切将顺利运行
+			}
+		]
+	}
+```
