@@ -16,3 +16,5 @@
 ## 7.codeSplit: 代码分离
 
 ## 8.lazyLoad: 懒加载
+
+## 9.shimmingTest: shimming 预置依赖
