@@ -9,7 +9,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 module.exports = {
 	mode: 'development',
 	entry: {
-		index: './src/index.js',
+		index: './src/index.ts',
 	},
 	devServer: {
 		static: './dist'
@@ -20,14 +20,15 @@ module.exports = {
 		}),
 	],
 	output: {
-		filename: '[name].[contenthash].js',
+		filename: '[name].js',
 		path: path.resolve(__dirname, 'dist'),
 		clean: true,
 	},
 	resolve: {
 		alias: {
 			ayt: path.resolve(__dirname, 'src'),
-		}
+		},
+		extensions: ['.tsx', 'ts', 'js']
 	},
 	optimization: {
 		minimize: true,
