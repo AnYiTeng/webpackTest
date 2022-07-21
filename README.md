@@ -12,3 +12,5 @@
 ## 5.treeShaking: 移除未引用代码
 
 ## 6.productionTest: 生产环境测试
+
+## 7.codeSplit: 代码分离
