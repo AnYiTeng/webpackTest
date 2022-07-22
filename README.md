@@ -20,3 +20,5 @@
 ## 9.shimmingTest: shimming 预置依赖
 
 ## 10.typeScript: ts 配置
+
+## 11.webWorker: webWorker 使用
