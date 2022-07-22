@@ -22,3 +22,7 @@
 ## 10.typeScript: ts 配置
 
 ## 11.webWorker: webWorker 使用
+>`Chrome` 不允许加载在本地文件运行脚本时加载 `web worker`，可以关闭 `Chrome` 终端运行以下命令设置 `Chrome` 重新打开。
+```
+/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --ignore-certificate-errors --ignore-urlfetcher-cert-requests --allow-file-access-from-files &> /dev/null
+```

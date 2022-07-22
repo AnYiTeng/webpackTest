@@ -1,11 +1,8 @@
-import _ from 'lodash'
-
-function component() {
-	const el = document.createElement('div')
-
-	el.innerHTML = _.join(['Hello', 'Webpack'], ' ')
-
-	return el
+console.log(new URL('./deep-thought.js', import.meta.url), 'url!!')
+const worker = new Worker(new URL('./deep-thought.js', import.meta.url))
+worker.postMessage({
+	question: 'The Answer to the Ultimate Question of Life, The Universe, and Everything.'
+})
+worker.onmessage = ({data: { answer }}) => {
+	console.log(answer, '??')
 }
-
-document.body.appendChild(component())

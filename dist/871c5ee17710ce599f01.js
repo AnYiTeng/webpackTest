@@ -1,0 +1,1 @@
+self.onmessage=({data:{question:s}})=>{self.postMessage({answer:42})};
