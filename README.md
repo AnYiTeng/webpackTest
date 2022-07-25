@@ -30,4 +30,4 @@ git push origin --delete remoteBranchName
 
 ## 12.pwaTest: 渐进式网络应用程序
 
-## 13.publicPath: 公共路径
+## 13.resourceModule: 资源模块
