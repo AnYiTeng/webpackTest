@@ -1,5 +1,10 @@
 # 分支
-
+```bash
+// 删除本地分支
+git branch -d localBranchName
+//删除远程分支
+git push origin --delete remoteBranchName
+```
 ## 1.wordNumLibrary: 创建 library
 > 该分支使用 esmodule 方式打包并发布, npm 地址：https://www.npmjs.com/package/anyitengfirstpackage
 
