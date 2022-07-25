@@ -1,11 +1,7 @@
-import _ from 'lodash'
+import mainImage from '../images/main.png'
+import test from './test.html'
 
-function component() {
-	const el = document.createElement('div')
+const img = document.createElement('img')
+test
 
-	el.innerHTML = _.join(['Hello', 'Webpack'], ' ')
-
-	return el
-}
-
-document.body.appendChild(component())
+img.src = mainImage

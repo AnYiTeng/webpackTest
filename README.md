@@ -31,3 +31,20 @@ git push origin --delete remoteBranchName
 ## 12.pwaTest: 渐进式网络应用程序
 
 ## 13.resourceModule: 资源模块
+>自定义输出文件名与指定输出目录：  
+方式1：配置 `output.assetModuleFilename`  
+方式2：
+```js
+module: {
+  rules: [
+    {
+      test: /\.html/,
+      type: 'asset/resource',
+      generator: {
+        filename: 'static/[hash][ext][query]'
+      }
+    }
+  ]
+},
+```
+

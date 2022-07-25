@@ -1,40 +1,32 @@
-/**
- * @type {import('webpack').Configuration}
-*/
-
 const path = require('path')
-const TerserPlugin = require('terser-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
-	mode: 'development',
-	entry: {
-		index: './src/index.js',
+	entry: './src/index.js',
+	output: {
+		filename: 'main.js',
+		path: path.resolve(__dirname, 'dist'),
+		clean: true,
+		assetModuleFilename: 'images/[hash][ext][query]'
 	},
-	devServer: {
-		static: './dist'
+	module: {
+		rules: [
+			{
+				test: /\.png/,
+				type: 'asset/resource'
+			},
+			{
+				test: /\.html/,
+				type: 'asset/resource',
+				generator: {
+					filename: 'static/[hash][ext][query]'
+				}
+			}
+		]
 	},
 	plugins: [
 		new HtmlWebpackPlugin({
-			title: 'Caching'
-		}),
-	],
-	output: {
-		filename: '[name].[contenthash].js',
-		path: path.resolve(__dirname, 'dist'),
-		clean: true,
-	},
-	resolve: {
-		alias: {
-			ayt: path.resolve(__dirname, 'src'),
-		}
-	},
-	optimization: {
-		minimize: true,
-		minimizer: [
-			new TerserPlugin({
-				extractComments: false, // webpack5 打包后会自动生成.txt文件，此配置不将注释提取到单独的文件中
-			})
-		],
-	}
+			title: '资源模块'
+		})
+	]
 }
