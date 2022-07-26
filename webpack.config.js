@@ -16,6 +16,10 @@ module.exports = {
 				type: 'asset/resource'
 			},
 			{
+				test: /\.svg/,
+				type: 'asset/inline'
+			},
+			{
 				test: /\.html/,
 				type: 'asset/resource',
 				generator: {
