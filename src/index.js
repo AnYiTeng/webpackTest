@@ -1,11 +1,2 @@
-import _ from 'lodash'
-
-function component() {
-	const el = document.createElement('div')
-
-	el.innerHTML = _.join(['Hello', 'Webpack'], ' ')
-
-	return el
-}
-
-document.body.appendChild(component())
+const css = require('./index.css')
+console.log(css)
