@@ -39,3 +39,5 @@ git push origin --delete remoteBranchName
 >[文章链接](https://juejin.cn/post/6844904007903772679#comment)
 
 * **课题1:** subject1
+>`import` 与 `require` 加载区别：`import` 是动态加载，只有在用到的时候才会去加载，而 `require` 只要声明了就会加载。  
+>`import` 动态加载的打包结果：除了 `bundle.js` 之外，还有一个 `1.bundle.js`，`1.bundle.js` 就是我们动态加载的 `index.css` 文件 

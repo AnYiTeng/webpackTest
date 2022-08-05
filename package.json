@@ -17,6 +17,7 @@
     "webpack": "^4.41.2"
   },
   "devDependencies": {
+    "webpack-chain": "^6.5.1",
     "webpack-cli": "^4.10.0"
   }
 }
